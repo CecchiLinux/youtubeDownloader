@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os 
 import platform
@@ -8,8 +8,11 @@ youtubeCmd = "youtube-dl"
 cmd = "where" if platform.system() == "Windows" else "which"
 try: 
         subprocess.call([cmd, youtubeCmd])
-        subprocess.call([youtubeCmd, "https://www.youtube.com/watch?v=hS5CfP8n_js"])
+        link = input('insert the link of the youtube video: ')
+        print(link)
+        subprocess.call([youtubeCmd, link])
+
 except: 
-        print "No executable"
+        print("No executable")
         exit()
 
